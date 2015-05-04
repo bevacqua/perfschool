@@ -1,6 +1,6 @@
 # perfschool
 
->
+> Find your way through the performance optimization maze in this NodeSchool workshopper
 
 # Install
 
