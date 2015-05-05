@@ -4,10 +4,18 @@
 
 # Install
 
-Get it from `npm`.
+Get it from `npm`
 
-```shell
-npm install perfschool --save
+```bash
+npm install perfschool -g
+```
+
+# Usage
+
+Just run the command below and follow the instructions on screen
+
+```bash
+perfschool
 ```
 
 # License

@@ -1,0 +1,12 @@
+{
+  "subtitle": "Find your way through the performance optimization maze!",
+  "common": {
+    "exercise": {
+      "fail": {
+        "connection": "Error connecting to {{{url}}} ({{{code}}})"
+      }
+    }
+  },
+  "exercises": {
+  }
+}

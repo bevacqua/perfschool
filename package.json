@@ -2,7 +2,6 @@
   "name": "perfschool",
   "version": "1.0.0",
   "description": "Find your way through the performance optimization maze in this NodeSchool workshopper",
-  "main": "perfschool.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bevacqua/perfschool.git"
@@ -12,5 +11,15 @@
   "bugs": {
     "url": "https://github.com/bevacqua/perfschool/issues"
   },
-  "homepage": "https://github.com/bevacqua/perfschool"
+  "homepage": "https://github.com/bevacqua/perfschool",
+  "main": "perfschool.js",
+  "bin": "./perfschool.js",
+  "preferGlobal": true,
+  "dependencies": {
+    "bl": "0.9.4",
+    "superagent": "1.2.0",
+    "through2": "0.6.5",
+    "workshopper": "2.5.0",
+    "workshopper-exercise": "2.3.0"
+  }
 }
