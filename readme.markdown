@@ -12,10 +12,16 @@ npm install perfschool -g
 
 # Usage
 
-Just run the command below and follow the instructions on screen
+First off, the command below will give you fresh copies of the files you'll need to run the exercises.
 
 ```bash
-perfschool
+perfschool init
+```
+
+Once that's out of the way, just run the command below and choose one of the exercises!
+
+```bash
+cd perfschool-playground ; perfschool
 ```
 
 # License
