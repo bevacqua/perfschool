@@ -3,7 +3,8 @@
   "common": {
     "exercise": {
       "fail": {
-        "connection": "Error connecting to {{{url}}} ({{{code}}})"
+        "connection": "Error connecting to {{{url}}} ({{{code}}})",
+        "unverified": "The exercise doesn't seem to have a verified solution!"
       }
     }
   },
