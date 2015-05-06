@@ -10,6 +10,24 @@
       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css'>
     </noscript>
+    <script>
+      (function () {
+        function loadStyle (url) {
+          var head = document.getElementsByTagName('head')[0];
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.media = 'only x';
+          link.href = url;
+          head.appendChild(link);
+          setTimeout(function () {
+            link.media = 'all';
+          }, 0);
+        }
+
+        loadStyle('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+        loadStyle('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css');
+      })();
+    </script>
   </head>
   <body>
     <p>Here's a fantastic tweet I wrote.</p>
@@ -19,7 +37,6 @@
     <p>And one last tweet, promise!</p>
     <blockquote class='twitter-tweet' lang='en'><p lang='en' dir='ltr'>How to Open Source: &#10;Make useful things&#10;Contribute&#10;Be nice</p>&mdash; kj (@dam) <a href='https://twitter.com/dam/status/594310149931667456'>May 2, 2015</a></blockquote>
     <script async src='//code.jquery.com/jquery-1.11.3.min.js'></script>
-    <script async src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
     <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
   </body>
 </html>

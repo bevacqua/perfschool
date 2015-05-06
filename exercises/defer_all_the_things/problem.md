@@ -22,7 +22,7 @@ function loadScript (url) {
   first.parentNode.insertBefore(script, first);
 }
 
-loadScript('http://v.campjs.com/js/all.js')
+loadScript('http://v.campjs.com/js/all.js');
 ```
 
 We also need to load styles asynchronously, which will become more useful in later

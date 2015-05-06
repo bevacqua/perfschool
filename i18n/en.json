@@ -13,14 +13,17 @@
   },
   "exercises": {
     "DEFER ALL THE THINGS": {
+      "sanity": "Good manners please. gl hf ;;",
       "script": "Script tag \"{{{src}}}\"",
       "link": "Link tag \"{{{href}}}\"",
       "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags! Did you forget a <noscript> fallback?",
       "async": "Script should load asynchronously",
       "noscript": "Stylesheet has a <noscript> fallback <link> just in case",
-      "dupe": "You shouldn't load the same script more than once, why not squish them into one <script>?",
+      "dupe": "You shouldn't load the same {{{tag}}} more than once, why not squish them into one <{{{tag}}}>?",
       "body": "Script should be in the <body>, scripts in <head> will block rendering!",
-      "bottom": "Script should be at the bottom of the page"
+      "bottom": "Script should be at the bottom of the page",
+      "noloadcss": "Link tag hasn't loaded at all!",
+      "deferred": "Link tag is properly loaded and has media type 'all'"
     }
   }
 }

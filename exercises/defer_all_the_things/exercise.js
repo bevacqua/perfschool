@@ -1,13 +1,24 @@
 'use strict';
 
+var fs = require('fs');
+var chalk = require('chalk');
+var jsdom = require('jsdom');
 var cheerio = require('cheerio');
 var factory = require('../../lib/factory');
+var jquery = require('../../lib/jquery');
 var exercise = factory({ verify: verify });
 
 module.exports = exercise;
 
-function verify (t, res) {
-  var $ = cheerio.load(res.body);
+function verify (t, req, res) {
+  var body = res.body;
+  var $ = cheerioOrBail();
+  if ($ === void 0) {
+    return;
+  }
+
+  t.fgroup('sanity');
+
   var scripts = $('script');
   if (scripts.length === 0) {
     t.ffail('empty', { tag: 'script' });
@@ -16,10 +27,23 @@ function verify (t, res) {
   if (styles.length === 0) {
     t.ffail('empty', { tag: 'style' });
   }
-  var sources = [];
+
+  var scriptSources = [];
+  var linkSources = [];
 
   scripts.each(validateScript);
   styles.each(validateStyle);
+
+  console.log('Firing up %s to verify that style tags loaded correctly...', chalk.yellow('jsdom'));
+  jsdom.env({
+    html: body,
+    src: [jquery],
+    features: {
+      FetchExternalResources: ['script'],
+      ProcessExternalResources: ['script']
+    },
+    done: domloaded
+  });
 
   function validateScript () {
     var el = $(this);
@@ -27,10 +51,10 @@ function verify (t, res) {
     var src = el.attr('src');
     if (src) {
       t.fgroup('script', { src: src });
-      if (sources.indexOf(src) !== -1) {
-        t.ffail('dupe'); return;
+      if (scriptSources.indexOf(src) !== -1) {
+        t.ffail('dupe', { tag: 'script' }); return;
       }
-      sources.push(src);
+      scriptSources.push(src);
       t.fpass('body', el.parent().is('body'));
       t.fpass('bottom', el.nextAll().length === el.nextAll('script').length);
       t.fpass('async', nonblocking);
@@ -42,7 +66,42 @@ function verify (t, res) {
     var href = el.attr('href')
     t.fgroup('link', { href: href });
     t.fpass('noscript', el.parent().is('noscript'));
+    linkSources.push(href);
   }
 
-  t.end();
+  function cheerioOrBail () {
+    try {
+      return cheerio.load(body);
+    } catch (err) {
+      t.end(err);
+    }
+  }
+
+  function domloaded (err, window) {
+    if (err) {
+      t.error(err); return;
+    }
+    var $ = window.$;
+    linkSources.forEach(verifyLink);
+    t.end();
+
+    function verifyLink (href) {
+      t.fgroup('link', { href: href });
+
+      var links = $('link').filter(byLinkAndMedia);
+      if (links.length === 0) {
+        t.ffail('noloadcss');
+      } else if (links.length > 1) {
+        t.ffail('dupe', { tag: 'link' });
+      } else {
+        t.fpass('deferred', links.attr('media') === 'all');
+      }
+
+      function byLinkAndMedia () {
+        var el = $(this);
+        var matches = el.attr('href') === href;
+        return matches;
+      }
+    }
+  }
 }
