@@ -16,15 +16,14 @@
   "bin": "./perfschool.js",
   "preferGlobal": true,
   "dependencies": {
-    "bl": "0.9.4",
     "chalk": "1.0.0",
+    "cheerio": "0.19.0",
     "contra": "1.8.1",
     "express": "4.12.3",
     "glob": "5.0.5",
     "lodash": "3.8.0",
     "mkdirp": "0.5.0",
-    "superagent": "1.2.0",
-    "through2": "0.6.5",
+    "request": "2.55.0",
     "workshopper": "2.5.0",
     "workshopper-exercise": "2.3.0"
   }

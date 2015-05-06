@@ -1,5 +1,6 @@
 'use strict';
 
+var cheerio = require('cheerio');
 var factory = require('../../lib/factory');
 
 module.exports = factory({
@@ -7,9 +8,11 @@ module.exports = factory({
 });
 
 function verify (res, next) {
-  console.log(res.text)
+  var responseText = res.body;
+  var $ = cheerio.load(responseText);
+
   next(null, [
-    {message:'Foo', passed: true},
-    {message:'Bar',passed: true}
+    { message: $('body').text().trim(), passed: true },
+    { message: 'Bar', passed: false }
   ]);
 }

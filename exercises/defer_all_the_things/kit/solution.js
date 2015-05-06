@@ -8,4 +8,4 @@ var app = express();
 app.get('/', function (req,res,next) {
   res.send(fs.readFileSync(path.join(__dirname,'index.html'), 'utf8'));
 });
-app.listen(process.argv[2] || 8080);
+app.listen(process.argv[2] || 3000);
