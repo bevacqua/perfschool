@@ -34,7 +34,7 @@ function verify (t, req, res) {
   scripts.each(validateScript);
   styles.each(validateStyle);
 
-  console.log('Firing up %s to verify that style tags loaded correctly...', chalk.yellow('jsdom'));
+  console.log(exercise.__('boot-jsdom', { process: chalk.yellow('jsdom') }));
   jsdom.env({
     html: body,
     src: [jquery],

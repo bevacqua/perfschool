@@ -23,7 +23,8 @@
       "body": "Script should be in the <body>, scripts in <head> will block rendering!",
       "bottom": "Script should be at the bottom of the page",
       "noloadcss": "Link tag hasn't loaded at all!",
-      "deferred": "Link tag is properly loaded and has media type 'all'"
+      "deferred": "Link tag is properly loaded and has media type 'all'",
+      "boot-jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly..."
     }
   }
 }
