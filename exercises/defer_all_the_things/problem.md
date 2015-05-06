@@ -34,6 +34,8 @@ the browser would have no use for invalid `media` type styles. After a `setTimeo
 you can set the `media` type to `'all'` and the resource would be fetched.
 
 Note that this technique foils modern browser technology, such as prefetching,
-and also thwarts static analysis in general terms.
+and also thwarts static analysis in general terms. It does in fact also mess with
+ancient browsers, so let's be great citizens and add a `<noscript>` fallback that
+loads the stylesheet as you've originally found them.
 
 After deferring both the scripts and the styles, run `perfschool verify solution.js`

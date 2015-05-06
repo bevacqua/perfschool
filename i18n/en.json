@@ -13,9 +13,11 @@
   },
   "exercises": {
     "DEFER ALL THE THINGS": {
-      "script": "Script \"{{{src}}}\"",
-      "empty": "Hey, you're not supposed to just remove all the <script> tags!",
-      "async": "Script loads asynchronously",
+      "script": "Script tag \"{{{src}}}\"",
+      "link": "Link tag \"{{{href}}}\"",
+      "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags! Did you forget a <noscript> fallback?",
+      "async": "Script should load asynchronously",
+      "noscript": "Stylesheet has a <noscript> fallback <link> just in case",
       "dupe": "You shouldn't load the same script more than once, why not squish them into one <script>?",
       "body": "Script should be in the <body>, scripts in <head> will block rendering!",
       "bottom": "Script should be at the bottom of the page"
