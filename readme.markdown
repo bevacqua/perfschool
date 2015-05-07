@@ -2,6 +2,10 @@
 
 > Find your way through the performance optimization maze in this NodeSchool workshopper
 
+# Screenshot
+
+![screenshot.png][1]
+
 # Install
 
 Get it from `npm`
@@ -27,3 +31,5 @@ cd perfschool-playground ; perfschool
 # License
 
 MIT
+
+[1]: https://github.com/bevacqua/dragula/blob/master/resources/screenshot.png

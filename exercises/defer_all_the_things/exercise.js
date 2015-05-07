@@ -1,6 +1,5 @@
 'use strict';
 
-var fs = require('fs');
 var chalk = require('chalk');
 var jsdom = require('jsdom');
 var cheerio = require('cheerio');
@@ -34,7 +33,7 @@ function verify (t, req, res) {
   scripts.each(validateScript);
   styles.each(validateStyle);
 
-  console.log(exercise.__('boot-jsdom', { process: chalk.yellow('jsdom') }));
+  console.log(exercise.__('boot_jsdom', { process: chalk.yellow('jsdom') }));
   jsdom.env({
     html: body,
     src: [jquery],
@@ -63,7 +62,7 @@ function verify (t, req, res) {
 
   function validateStyle () {
     var el = $(this);
-    var href = el.attr('href')
+    var href = el.attr('href');
     t.fgroup('link', { href: href });
     t.fpass('noscript', el.parent().is('noscript'));
     linkSources.push(href);

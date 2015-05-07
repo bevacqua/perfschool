@@ -5,13 +5,22 @@
       "fail": {
         "connection": "Error connecting to {{{url}}} ({{{code}}})",
         "unverified": "The exercise doesn't seem to have a verified solution!"
-      }
+      },
+      "status_ok": "Returns a 200 OK status code",
+      "json_object": "Returns a JSON object",
+      "prop": "Response has a \"{{{key}}}\" property"
     }
   },
   "menu": {
     "init": "INIT"
   },
   "exercises": {
+    "USING THE PAGESPEED API": {
+      "main_group": "/insights produces valuable information about page weight"
+    },
+    "USING THE WEBPAGETEST API": {
+      "main_group": "/test yields valuable timing information"
+    },
     "DEFER ALL THE THINGS": {
       "sanity": "Good manners please. gl hf ;;",
       "script": "Script tag \"{{{src}}}\"",
@@ -24,7 +33,7 @@
       "bottom": "Script should be at the bottom of the page",
       "noloadcss": "Link tag hasn't loaded at all!",
       "deferred": "Link tag is properly loaded and has media type 'all'",
-      "boot-jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly..."
+      "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly..."
     }
   }
 }
