@@ -2,6 +2,8 @@
 
 > Find your way through the performance optimization maze in this NodeSchool workshopper
 
+This workshop is based on one of my talks, ["High Performance in the Critical Path"][2].
+
 # Screenshot
 
 ![screenshot.png][1]
@@ -33,3 +35,4 @@ cd perfschool-playground ; perfschool
 MIT
 
 [1]: https://github.com/bevacqua/dragula/blob/master/resources/screenshot.png
+[2]: https://speakerdeck.com/bevacqua/high-performance-in-the-critical-path
