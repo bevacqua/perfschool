@@ -19,6 +19,8 @@ email with your API key. Each key is limited to something like 200 requests a da
 
 https://www.webpagetest.org/getkey.php
 
+You can use the `webpagetest` module to interact with the WebPageTest API.
+
 WPT allows you to place your requests on different servers around the world so that you
 can test how the site performs for each corner of the world. For the purposes of this
 exercise, I suggest you try to find a `location` that isn't very crowded. In testing,

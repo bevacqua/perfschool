@@ -75,4 +75,12 @@ step where you get the images, optimize them, and then save them somewhere to be
 to respond with the (already optimized) images immediately, rather than optimize them
 on the spot.
 
-In later exercises we'll come back to image optimization and look into some other tools!
+The other important take-away in this exercise is that you should respect a `#perfbudget`,
+if you've set one, and try to enforce it as aggressively as possible. You might
+incorporate one into your build processes using `grunt-perfbudget`, or you could always
+hand-code one, where you simply use `psi` or `webpagetest` to verify that the application
+is within your budget, and if it's not, you crash the build.
+
+In later exercises we'll come back to image optimization and look into some other tools.
+
+Run `perfschool verify solution.js` to make sure it all works when you're done!
