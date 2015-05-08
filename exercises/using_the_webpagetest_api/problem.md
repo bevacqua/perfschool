@@ -10,9 +10,12 @@ What is the visual representation over time? How long does it take for the first
 request to get through? How long until page load? How long until document ready? WPT is able
 to tell you all of these things and quite a bit more, *in excruciating detail*.
 
-WebPageTest tells you all of these things, but is also quite cumbersome to use. First off,
-you'll need an API key. These are easy to get, you just fill the form and get an email with
-your API key. They're limited to something like 200 requests a day, though.
+WebPageTest tells you all of these things, but is also quite cumbersome to use.
+
+# PROBLEM
+
+First off, you'll need an API key. These are easy to get, you just fill the form and get an
+email with your API key. Each key is limited to something like 200 requests a day, though.
 
 https://www.webpagetest.org/getkey.php
 

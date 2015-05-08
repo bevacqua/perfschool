@@ -3,9 +3,9 @@
 var chalk = require('chalk');
 var jsdom = require('jsdom');
 var cheerio = require('cheerio');
-var factory = require('../../lib/factory');
+var wat = require('workshopper-wat');
 var jquery = require('../../lib/jquery');
-var exercise = factory({ verify: verify });
+var exercise = wat({ verify: verify });
 
 module.exports = exercise;
 

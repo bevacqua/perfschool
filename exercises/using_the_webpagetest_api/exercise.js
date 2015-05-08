@@ -1,7 +1,7 @@
 'use strict';
 
-var factory = require('../../lib/factory');
-var exercise = factory({ verify: verify, endpoint: '/test', piped: true });
+var wat = require('workshopper-wat');
+var exercise = wat({ verify: verify, endpoint: '/test', piped: true });
 
 module.exports = exercise;
 

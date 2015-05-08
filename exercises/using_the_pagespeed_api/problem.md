@@ -1,6 +1,8 @@
 Hey there! If you haven't yet, make sure to run `perfschool init` _before proceeding_.
 It will create a `perfschool-playground` directory with everything you need to get started.
 
+# PROBLEM
+
 We've put together a `solution.js` file for you which has a web server built on `express`.
 You have to set up an `/insights` route that responds with the PageSpeed score for the
 landing page `/`, as well as its stats.

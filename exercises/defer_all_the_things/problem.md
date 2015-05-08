@@ -1,6 +1,8 @@
 Hey there! If you haven't yet, make sure to run `perfschool init` _before proceeding_.
 It will create a `perfschool-playground` directory with everything you need to get started.
 
+# PROBLEM
+
 In this exercise there's an `index.html` page you need to fix. It presents
 a series of issues.
 
