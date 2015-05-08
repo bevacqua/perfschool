@@ -40,7 +40,7 @@ function home (req, res) {
 function test (req, res, next) {
   var tunnel;
 
-  console.log('\nTunneling http://localhost:%s onto the open web...', port);
+  console.log('Tunneling http://localhost:%s onto the open web...', port);
   localtunnel(port, ready);
 
   function ready (err, t) {

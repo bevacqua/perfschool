@@ -16,7 +16,9 @@ human experience, engagement, and ultimately sales.
 Tim Kadlec (@tkadlec) has a few great articles on the topic that I recommend you go through,
 if you haven't already.
 
+```
 http://timkadlec.com/tags/performance-budget/
+```
 
 Defining a #perfbudget is only half the battle, though. The real benefits come when you
 automate and enforce these constraints.
@@ -58,7 +60,13 @@ they do require you to register)_. However, it's important to use their API, sin
 the most cats.
 
 You can pick your favorite subreddit for cat image fulfillment needs. I'm particularly fond
-of `/r/kittens`, so I'll use that as an example. You'll need to set a header like this:
+of `/r/kittens`, so I'll use that as an example. You can use the following API endpoint:
+
+```
+https://api.imgur.com/3/gallery/r/{subreddit}
+```
+
+You'll need to set a header like this:
 
 ```
 Authorization: Client-ID {{YOUR_CLIENT_ID}}
@@ -73,7 +81,9 @@ curl -H 'Authorization: Client-ID {{YOUR_CLIENT_ID}}' https://api.imgur.com/3/ga
 A bunch of JSON should come up in your terminal. You can have a peek at the format of that
 response by visiting the following link:
 
+```
 https://api.imgur.com/models/gallery_image
+```
 
 The field you're probably looking for is the `link` field in each array item in `data`.
 If you're trying things out in your terminal first, and you have `jq` installed, I suggest
@@ -84,9 +94,17 @@ jq -r '.data[].link'
 ```
 
 Verification will set up a tunnel of its and ask PageSpeed to evaluate your `/cats`. You'll
-have a budget of `amount * 40k` to return the expected `amount` of cats. If you don't meet
+have a budget of `amount * 20kB` to return the expected `amount` of cats. If you don't meet
 the budget, then verification will fail.
 
 Consider minifying your cats using `gm`, `imagemin`, or your own clever tricks! Become
 creative and try to come up with the best way to display as many cats as the request demands
 without sacrificing performance!
+
+As far as using the cats from the Imgur API, you could save the files to disk, manipulate
+them reducing them in size, and then use those pre-baked small images in your response. Or,
+you could also set up a proxy that takes an image url in a parameter and responds with a
+smaller version of that same image on the fly. In the case of this exercise, both approaches
+are valid ways of staying below the `20kB` limit per cat.
+
+Good luck!

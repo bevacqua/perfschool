@@ -24,11 +24,13 @@ function home (req, res) {
 }
 
 function insights (req, res, next) {
+  console.log('Tunneling http://localhost:%s onto the open web...', port);
   localtunnel(port, tunneled);
   function tunneled (err, tunnel) {
     if (err) {
       next(err); return;
     }
+    console.log('Asking PageSpeed Insights for feedback about %s...', tunnel.url);
     psi(tunnel.url, stats);
     function stats (err, data) {
       tunnel.close();
