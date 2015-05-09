@@ -32,6 +32,7 @@
     "pretty-bytes": "1.0.4",
     "psi": "1.0.6",
     "request": "2.55.0",
+    "serve-static": "1.9.2",
     "webpagetest": "0.3.3",
     "workshopper": "2.5.0",
     "workshopper-wat": "1.0.2"

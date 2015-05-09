@@ -17,4 +17,5 @@ using PhantomJS, a headless browser that's able to interpret resources such as C
 You are given an application with a bunch of CSS that's used, and a bunch of CSS that's unused.
 Leverage `uncss` to filter out the unused CSS and only serve what's needed.
 
-Don't inline the styles. Instead, have an endpoint return them as a CSS stylesheet.
+Don't inline the styles. Instead, serve a stylesheet in your responses that *only* has the used
+styles.
