@@ -24,7 +24,7 @@ function verify (t, req, res) {
   }
   var styles = $('link[rel="stylesheet"]');
   if (styles.length === 0) {
-    t.ffail('empty', { tag: 'style' });
+    t.ffail('empty', { tag: 'link' });
   }
 
   var scriptSources = [];

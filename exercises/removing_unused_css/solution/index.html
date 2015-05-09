@@ -1,24 +1,37 @@
 <html>
   <head>
-    <link rel='shortcut icon' href='/favicon.ico' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta name='referrer' content='always'>
-    <meta name='twitter:widgets:csp' content='on'>
-    <title>Defer All The Things!</title>
-    <script src='//code.jquery.com/jquery-1.11.3.min.js'></script>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css'>
+    <title>Removing Unused CSS!</title>
+    <link rel='stylesheet' href='/reduced.css'>
   </head>
   <body>
-    <p>Here's a fantastic tweet I wrote.</p>
-    <blockquote class='twitter-tweet' lang='en'><p lang='en' dir='ltr'>Here&#39;s where I rant about how we are breaking the web, and what we should do to stop it.&#10;<a href='http://t.co/XoSftGYeAl'>http://t.co/XoSftGYeAl</a> <a href='http://t.co/uk9C1TpnMQ'>pic.twitter.com/uk9C1TpnMQ</a></p>&mdash; Nicolas Bevacqua (@nzgb) <a href='https://twitter.com/nzgb/status/527911439835463680'>October 30, 2014</a></blockquote>
-    <script src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
-    <p>Here's another great tweet.</p>
-    <blockquote class='twitter-tweet' lang='en'><p lang='en' dir='ltr'>Delusional Man Turning Off Laptop Like He’s Done With It For Night <a href='http://t.co/lH0I2btaKx'>http://t.co/lH0I2btaKx</a> <a href='http://t.co/HaJd4QRIXH'>pic.twitter.com/HaJd4QRIXH</a></p>&mdash; The Onion (@TheOnion) <a href='https://twitter.com/TheOnion/status/593187991239012352'>April 28, 2015</a></blockquote>
-    <script src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
-    <p>And one last tweet, promise!</p>
-    <blockquote class='twitter-tweet' lang='en'><p lang='en' dir='ltr'>How to Open Source: &#10;Make useful things&#10;Contribute&#10;Be nice</p>&mdash; kj (@dam) <a href='https://twitter.com/dam/status/594310149931667456'>May 2, 2015</a></blockquote>
-    <script src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
+    <main>
+      <h1 class='header blink'>REMOVING UNUSED CSS</h1>
+      <section>
+Hey there! If you haven't yet, make sure to run <code>perfschool init</code> <em>before proceeding</em>.
+It will create a <code>perfschool-playground</code> directory with everything you need to get started.
+
+From time to time, you'll work on a project where you use a CSS framework such as <code>Bootstrap</code>.
+Or, you may be working in a legacy project with tons of CSS that you just <em>know</em> it's not being
+used anymore. In these cases there's a nifty little tool you can use to get rid of all those CSS
+rules that are not being put to good use.
+
+This saves your users considerable bytes, especially when it comes to including a framework only
+to get access to a couple of the styles they've defined.
+
+The <code>uncss</code> package allows you to get rid of all of those useless bytes by loading a file or URL
+using PhantomJS, a headless browser that's able to interpret resources such as CSS and JavaScript.
+      </section>
+      <h2 class='header blink'>PROBLEM</h2>
+      <section>
+You are given an application with a bunch of CSS that's used, and a bunch of CSS that's unused.
+Leverage <code>uncss</code> to filter out the unused CSS and only serve what's needed.
+
+Don't inline the styles. Instead, serve a stylesheet in your responses that <em>only</em> has the used
+styles. You are free to merge all the stylesheets into a single one.
+      </section>
+      <section class='link-section'>
+        <a class='blink' href='https://github.com/bevacqua/perfschool'>perfschool on GitHub!</a>
+      </section>
+    </main>
   </body>
 </html>

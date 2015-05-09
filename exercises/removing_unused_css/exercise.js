@@ -1,15 +1,21 @@
 'use strict';
 
+var url = require('url');
+var css = require('css');
 var chalk = require('chalk');
-var jsdom = require('jsdom');
+var util = require('util');
+var contra = require('contra');
+var request = require('request');
 var cheerio = require('cheerio');
 var wat = require('workshopper-wat');
-var jquery = require('../../lib/jquery');
 var exercise = wat({ verify: verify });
 
 module.exports = exercise;
 
 function verify (t, req, res) {
+  var matches = 0;
+  var total = 0;
+  var failures = [];
   var body = res.body;
   var $ = cheerioOrBail();
   if ($ === void 0) {
@@ -18,54 +24,90 @@ function verify (t, req, res) {
 
   t.fgroup('sanity');
 
-  var scripts = $('script');
-  if (scripts.length === 0) {
-    t.ffail('empty', { tag: 'script' });
-  }
   var styles = $('link[rel="stylesheet"]');
   if (styles.length === 0) {
-    t.ffail('empty', { tag: 'style' });
+    t.ffail('empty', { tag: 'link' });
   }
 
-  var scriptSources = [];
-  var linkSources = [];
+  contra.map(Array.prototype.slice.call(styles.map(toHref)), fetch, fetched);
 
-  scripts.each(validateScript);
-  styles.each(validateStyle);
+  function toHref (el) {
+    return $(this).attr('href');
+  }
 
-  console.log(exercise.__('boot_jsdom', { process: chalk.yellow('jsdom') }));
-  jsdom.env({
-    html: body,
-    src: [jquery],
-    features: {
-      FetchExternalResources: ['script'],
-      ProcessExternalResources: ['script']
-    },
-    done: domloaded
-  });
+  function fetch (href, next) {
+    var absolute = url.resolve('http://localhost:' + req.port, href);
+    request(absolute, function got (err, res) {
+      t.fgroup('resource', { href: href });
+      t.fpass('fetched', !err);
 
-  function validateScript () {
-    var el = $(this);
-    var nonblocking = !!el.attr('async');
-    var src = el.attr('src');
-    if (src) {
-      t.fgroup('script', { src: src });
-      if (scriptSources.indexOf(src) !== -1) {
-        t.ffail('dupe', { tag: 'script' }); return;
+      if (err) {
+        next(err); return;
       }
-      scriptSources.push(src);
-      t.fpass('body', el.parent().is('body'));
-      t.fpass('bottom', el.nextAll().length === el.nextAll('script').length);
-      t.fpass('async', nonblocking);
+
+      var ast = css.parse(res.body, { silent: true });
+
+      t.fpass('type', res.headers['content-type'].indexOf('text/css') === 0);
+      t.fpass('valid', ast.stylesheet.parsingErrors.length === 0);
+
+      next(err, ast);
+    });
+  }
+
+  function fetched (err, results) {
+    if (err) {
+      t.error(err); return;
+    }
+
+    t.fgroup('overview');
+    results.forEach(verifyAST);
+    t.fpass('relevant_rules', { matches: matches, total: total }, matches === total);
+
+    if (failures.length) {
+      var failed = util.format(chalk.red('"%s"'), failures.slice(0, 100).join(', '));
+      if (failures.length > 100) {
+        failed += exercise.__('others', { more: failures.length - 100 });
+      }
+      t.ffail('unused', { selectors: failed + '.' });
+    }
+
+    t.end();
+  }
+
+  function verifyAST (ast) {
+    verifyTree(ast.stylesheet);
+  }
+
+  function verifyTree (ast) {
+    ast.rules.forEach(verifyRule);
+  }
+
+  function verifyRule (rule) {
+    if (rule.type === 'media') {
+      verifyTree(rule); return;
+    }
+    if (rule.type === 'rule') {
+      rule.selectors.forEach(verifySelector);
     }
   }
 
-  function validateStyle () {
-    var el = $(this);
-    var href = el.attr('href');
-    t.fgroup('link', { href: href });
-    t.fpass('noscript', el.parent().is('noscript'));
-    linkSources.push(href);
+  function verifySelector (selector) {
+    var any = attempt(selector);
+    if (any) {
+      matches++;
+    } else if (failures.indexOf(selector) === -1) {
+      failures.push(selector);
+    }
+    total++;
+  }
+
+  function attempt (selector) {
+    var sane = selector.replace(/:+[A-z-]+/g, '') || '*';
+    try {
+      return $(sane).length > 0;
+    } catch (e) {
+      return true; // we just ignore complicated selectors
+    }
   }
 
   function cheerioOrBail () {
@@ -73,34 +115,6 @@ function verify (t, req, res) {
       return cheerio.load(body);
     } catch (err) {
       t.end(err);
-    }
-  }
-
-  function domloaded (err, window) {
-    if (err) {
-      t.error(err); return;
-    }
-    var $ = window.$;
-    linkSources.forEach(verifyLink);
-    t.end();
-
-    function verifyLink (href) {
-      t.fgroup('link', { href: href });
-
-      var links = $('link').filter(byLinkAndMedia);
-      if (links.length === 0) {
-        t.ffail('noloadcss');
-      } else if (links.length > 1) {
-        t.ffail('dupe', { tag: 'link' });
-      } else {
-        t.fpass('deferred', links.attr('media') === 'all');
-      }
-
-      function byLinkAndMedia () {
-        var el = $(this);
-        var matches = el.attr('href') === href;
-        return matches;
-      }
     }
   }
 }

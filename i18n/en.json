@@ -44,6 +44,18 @@
       "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
       "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images...",
       "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web..."
+    },
+    "REMOVING UNUSED CSS": {
+      "sanity": "Good manners please. gl hf ;;",
+      "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags!",
+      "resource": "Link tag \"{{{href}}}\"",
+      "fetched": "Fetched CSS stylesheet",
+      "type": "Stylesheet has proper Content-Type header in response",
+      "valid": "Stylesheet has valid CSS in it",
+      "overview": "CSS Rule Relevance",
+      "relevant_rules": "Out of {{{total}}} selectors in your styles, {{{matches}}} might actually be relevant to this page.",
+      "unused": "The unused CSS selectors that are still on your CSS stylesheet are: {{{selectors}}}",
+      "others": " and {{{more}}} others"
     }
   }
 }

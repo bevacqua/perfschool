@@ -7,29 +7,32 @@
   </head>
   <body>
     <main>
-      <h1 class='header'>REMOVING UNUSED CSS</h1>
+      <h1 class='header blink'>REMOVING UNUSED CSS</h1>
       <section>
-        <p>Hey there! If you haven't yet, make sure to run <code>perfschool init</code> <em>before proceeding</em>.</p>
-        <p>It will create a <code>perfschool-playground</code> directory with everything you need to get started.</p>
-        <p></p>
-        <p>From time to time, you'll work on a project where you use a CSS framework such as <code>Bootstrap</code>.</p>
-        <p>Or, you may be working in a legacy project with tons of CSS that you just <em>know</em> it's not being</p>
-        <p>used anymore. In these cases there's a nifty little tool you can use to get rid of all those CSS</p>
-        <p>rules that are not being put to good use.</p>
-        <p></p>
-        <p>This saves your users considerable bytes, especially when it comes to including a framework only</p>
-        <p>to get access to a couple of the styles they've defined.</p>
-        <p></p>
-        <p>The <code>uncss</code> package allows you to get rid of all of those useless bytes by loading a file or URL</p>
-        <p>using PhantomJS, a headless browser that's able to interpret resources such as CSS and JavaScript.</p>
+Hey there! If you haven't yet, make sure to run <code>perfschool init</code> <em>before proceeding</em>.
+It will create a <code>perfschool-playground</code> directory with everything you need to get started.
+
+From time to time, you'll work on a project where you use a CSS framework such as <code>Bootstrap</code>.
+Or, you may be working in a legacy project with tons of CSS that you just <em>know</em> it's not being
+used anymore. In these cases there's a nifty little tool you can use to get rid of all those CSS
+rules that are not being put to good use.
+
+This saves your users considerable bytes, especially when it comes to including a framework only
+to get access to a couple of the styles they've defined.
+
+The <code>uncss</code> package allows you to get rid of all of those useless bytes by loading a file or URL
+using PhantomJS, a headless browser that's able to interpret resources such as CSS and JavaScript.
       </section>
-      <h2 class='header'>PROBLEM</h2>
+      <h2 class='header blink'>PROBLEM</h2>
       <section>
-        <p>You are given an application with a bunch of CSS that's used, and a bunch of CSS that's unused.</p>
-        <p>Leverage <code>uncss</code> to filter out the unused CSS and only serve what's needed.</p>
-        <p></p>
-        <p>Don't inline the styles. Instead, serve a stylesheet in your responses that <em>only</em> has the used</p>
-        <p>styles.</p>
+You are given an application with a bunch of CSS that's used, and a bunch of CSS that's unused.
+Leverage <code>uncss</code> to filter out the unused CSS and only serve what's needed.
+
+Don't inline the styles. Instead, serve a stylesheet in your responses that <em>only</em> has the used
+styles. You are free to merge all the stylesheets into a single one.
+      </section>
+      <section class='link-section'>
+        <a class='blink' href='https://github.com/bevacqua/perfschool'>perfschool on GitHub!</a>
       </section>
     </main>
   </body>

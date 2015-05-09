@@ -18,4 +18,4 @@ You are given an application with a bunch of CSS that's used, and a bunch of CSS
 Leverage `uncss` to filter out the unused CSS and only serve what's needed.
 
 Don't inline the styles. Instead, serve a stylesheet in your responses that *only* has the used
-styles.
+styles. You are free to merge all the stylesheets into a single one.

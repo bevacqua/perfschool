@@ -1,10 +1,9 @@
 body {
   background-color: #333;
-  color: #fefefe;
+  color: #f2ca27;
   padding: 25px;
 }
 p {
-  line-height: 9px;
 }
 p:first-child {
   margin-top: 0;
@@ -18,17 +17,20 @@ p:empty {
 .header {
   text-align: center;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 1px #fff;
-  -webkit-animation: blink 2s linear 0s infinite;
-  -moz-animation: blink 2s linear 0s infinite;
-  -ms-animation: blink 2s linear 0s infinite;
-  -o-animation: blink 2s linear 0s infinite;
+  text-shadow: 1px 1px 1px #f39c12;
+}
+.blink {
+  -webkit-animation: blink 0.001s linear 0s infinite;
+  -moz-animation: blink 0.001s linear 0s infinite;
+  -ms-animation: blink 0.001s linear 0s infinite;
+  -o-animation: blink 0.001s linear 0s infinite;
 }
 .header:first-child {
   margin-top: 0;
 }
 section {
-  padding: 20px;
+  white-space: pre-wrap;
+  padding: 0 20px;
   background-color: rgba(0, 0, 0, 0.1);
 }
 div {
@@ -75,4 +77,16 @@ div {
     max-width: inherit;
     text-align: left;
   }
+}
+
+.link-section {
+  margin-top: 20px;
+  text-align: center;
+  background-color: rgba(243, 156, 18, 0.1)
+}
+.link-section a {
+  display: block;
+  color: #f39c12;
+  font-weight: bold;
+  font-size: 22px;
 }
