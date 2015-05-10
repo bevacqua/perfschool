@@ -38,11 +38,8 @@
       "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly..."
     },
     "ENFORCING A PERFORMANCE BUDGET": {
-      "main_group": "/cats returns felines according to the spec",
-      "cat_amount": "Response contains {{{amount}}} cats",
-      "is_this_a_cat": "Does this look like a cat to you? Be honest!",
+      "main_group": "/ passes #perfbudget test with flying colors",
       "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
-      "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images...",
       "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web..."
     },
     "REMOVING UNUSED CSS": {
@@ -56,6 +53,14 @@
       "relevant_rules": "Out of {{{total}}} selectors in your styles, {{{matches}}} might actually be relevant to this page.",
       "unused": "The unused CSS selectors that are still on your CSS stylesheet are: {{{selectors}}}",
       "others": " and {{{more}}} others"
+    },
+    "OPTIMIZING IMAGES": {
+      "main_group": "/cats returns felines according to the spec",
+      "cat_amount": "Response contains {{{amount}}} cats",
+      "is_this_a_cat": "Does this look like a cat to you? Be honest!",
+      "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
+      "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images...",
+      "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web..."
     }
   }
 }
