@@ -1,0 +1,16 @@
+.cat {
+  max-width: 300px;
+}
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+body {
+  padding: 25px;
+  background-color: #a3b1b2;
+}
+div {
+  vertical-align: top;
+  display: inline-block;
+  width: 33%
+}

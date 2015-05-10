@@ -25,4 +25,15 @@ automate and enforce these constraints.
 
 # PROBLEM
 
-xxx
+You are given a web application that has many pictures of kittens, and displays three tweets.
+Figure out a way to pass the PageSpeed test during verification using `perfschool verify solution.js`.
+
+One possible solution is to serve optimized versions of the cats. Another is to load the images after
+a while, without blocking rendering. How would you do that without damaging the user experience?
+
+Take into account the things you've learned during the `"DEFER ALL THE THINGS"` exercise as well!
+
+One last hint, embedded tweets will omit extra media images if you add `data-cards='hidden'` to the
+`<blockquote>` tag for each tweet.
+
+Bon voyage!

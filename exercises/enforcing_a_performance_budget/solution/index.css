@@ -1,0 +1,21 @@
+.cat {
+  max-width: 300px;
+}
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+body {
+  background-color: #a3b1b2;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 25px;
+  }
+  div {
+    vertical-align: top;
+    display: inline-block;
+    width: 33%
+  }
+}

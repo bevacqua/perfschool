@@ -1,11 +1,10 @@
 'use strict';
 
-var url = require('url');
-var path = require('path');
+var _ = require('lodash');
+var psi = require('psi');
 var cheerio = require('cheerio');
 var localtunnel = require('localtunnel');
 var wat = require('workshopper-wat');
-var amount = randomAmountOfCats();
 var exercise = wat({
   verify: verify
 });
@@ -21,8 +20,8 @@ function verify (t, req, res) {
       next(err); return;
     }
     console.log(exercise.__('get_feedback', { url: tunnel.url }));
-    psi(tunnel.url, stats);
-    function stats (err, data) {
+    psi(tunnel.url, { strategy: 'desktop' }, stats);
+    function stats (err, pagespeed) {
       if (err) {
         next(err); return;
       }
@@ -32,13 +31,17 @@ function verify (t, req, res) {
         return;
       }
 
-      console.log(data.pageStats);
-
       var type = res.headers['content-type'];
       var expectedType = 'text/html';
+      var cats = $('img[src]');
+      var expectedCats = 8;
+      var pagespeedMin = 80;
 
       t.fgroup('main_group');
       t.fpass('content_type', { type: expectedType }, type.indexOf(expectedType) === 0);
+      t.fpass('catty', res.body.indexOf('kittens') !== -1);
+      t.fpass('pagespeed_score', { score: pagespeed.score, min: pagespeedMin }, pagespeed.score > pagespeedMin);
+      t.end();
     }
   }
 
