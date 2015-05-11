@@ -41,7 +41,7 @@
       "main_group": "/ passes #perfbudget test with flying colors",
       "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
       "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web...",
-      "catty": "Something in the response says \"cats\"",
+      "catty": "Something in the response contains \"cats\" or \"kittens\"!",
       "pagespeed_score": "PageSpeed score is over {{{min}}} (was {{{score}}})"
     },
     "REMOVING UNUSED CSS": {

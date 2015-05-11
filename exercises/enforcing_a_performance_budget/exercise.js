@@ -36,10 +36,11 @@ function verify (t, req, res) {
       var cats = $('img[src]');
       var expectedCats = 8;
       var pagespeedMin = 80;
+      var rcatty = /(cat|kitten)s/i;
 
       t.fgroup('main_group');
       t.fpass('content_type', { type: expectedType }, type.indexOf(expectedType) === 0);
-      t.fpass('catty', res.body.indexOf('kittens') !== -1);
+      t.fpass('catty', rcatty.test(res.body));
       t.fpass('pagespeed_score', { score: pagespeed.score, min: pagespeedMin }, pagespeed.score > pagespeedMin);
       t.end();
     }

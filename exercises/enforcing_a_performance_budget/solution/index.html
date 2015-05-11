@@ -5,42 +5,39 @@
     <meta name='referrer' content='always'>
     <meta name='twitter:widgets:csp' content='on'>
     <title>Enforcing a Performance Budget</title>
-    <style>
-      .cat {
-        max-width: 300px;
-      }
-      h1 {
-        text-align: center;
-        font-size: 48px;
-      }
-      body {
-        background-color: #a3b1b2;dy {
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      @media only screen and (min-width: 768px) {
-        body {
-          padding: 25px;
+    <noscript>
+      <link rel='stylesheet' href='/index.css'>
+    </noscript>
+    <script>
+      (function () {
+        function loadStyle (url) {
+          var head = document.getElementsByTagName('head')[0];
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.media = 'only x';
+          link.href = url;
+          head.appendChild(link);
+          setTimeout(function () {
+            link.media = 'all';
+          }, 0);
         }
-        div {
-          vertical-align: top;
-          display: inline-block;
-          width: 30%
-        }
-      }
-    </style>
+
+        loadStyle('/index.css');
+      }();
+    </script>
   </head>
   <body>
-    <button class='see'>See cats</button>
+    <button class='see'>See kittens!</button>
     <article class='cats' style='display:none;'>
       <h1>These are kittens.</h1>
-      <img class='cat' data-src='http://i.imgur.com/szp6mtc.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/LDi7dQc.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/QTWNuxD.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/blSnwaJ.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/Kd4vU6t.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/GM8I8CN.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/976ITaH.jpg' />
-      <img class='cat' data-src='http://i.imgur.com/47ePYw8.gif' />
+      <img class='cat' src='http://i.imgur.com/szp6mtc.jpg' />
+      <img class='cat' src='http://i.imgur.com/LDi7dQc.jpg' />
+      <img class='cat' src='http://i.imgur.com/QTWNuxD.jpg' />
+      <img class='cat' src='http://i.imgur.com/blSnwaJ.jpg' />
+      <img class='cat' src='http://i.imgur.com/Kd4vU6t.jpg' />
+      <img class='cat' src='http://i.imgur.com/GM8I8CN.jpg' />
+      <img class='cat' src='http://i.imgur.com/976ITaH.jpg' />
+      <img class='cat' src='http://i.imgur.com/47ePYw8.gif' />
     </article>
     <div>
       <h1>Here's a fantastic tweet I wrote.</h1>
@@ -62,9 +59,11 @@
     <script>
       document.querySelector('.see').addEventListener('click', function () {
         document.querySelector('.cats').style.display = 'block';
-        Array.prototype.slice.call(document.querySelectorAll('.cat')).forEach(function (cat) {
+        var cats = document.querySelectorAll('.cat');
+        Array.prototype.slice.call(cats).forEach(load);
+        function load (cat) {
           cat.src = cat.getAttribute('data-src');
-        });
+        }
       });
     </script>
   </body>

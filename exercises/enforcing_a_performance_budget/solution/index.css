@@ -7,6 +7,7 @@ h1 {
 }
 body {
   background-color: #a3b1b2;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -16,6 +17,6 @@ body {
   div {
     vertical-align: top;
     display: inline-block;
-    width: 33%
+    width: 30%
   }
 }
