@@ -29,7 +29,7 @@ perfschool init
 Once that's out of the way, just run the command below and choose one of the exercises!
 
 ```bash
-cd perfschool-playground ; perfschool
+cd perfschool-playground ; npm install ; perfschool
 ```
 
 # License
