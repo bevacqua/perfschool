@@ -34,6 +34,7 @@
     "psi": "1.0.6",
     "request": "2.55.0",
     "serve-static": "1.9.2",
+    "through2-concat": "1.0.1",
     "webpagetest": "0.3.3",
     "workshopper": "2.5.0",
     "workshopper-wat": "2.0.0"

@@ -13,6 +13,10 @@
       "prop": "Response has a \"{{{key}}}\" property"
     }
   },
+  "init": {
+    "copying": "Copying files over to {{{target}}}!",
+    "cd-start": "Change directory into {{{target}}} and start workshopping!"
+  },
   "menu": {
     "init": "INIT"
   },
