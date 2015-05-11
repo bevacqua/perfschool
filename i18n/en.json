@@ -1,5 +1,8 @@
 {
   "subtitle": "Find your way through the performance optimization maze!",
+  "menu": {
+    "init": "INIT"
+  },
   "common": {
     "exercise": {
       "fail": {
@@ -16,9 +19,6 @@
   "init": {
     "copying": "Copying files over to {{{target}}}!",
     "cd-start": "Change directory into {{{target}}} and start workshopping!"
-  },
-  "menu": {
-    "init": "INIT"
   },
   "exercises": {
     "USING THE PAGESPEED API": {
