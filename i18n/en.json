@@ -63,6 +63,12 @@
       "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
       "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images...",
       "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web..."
+    },
+    "INLINING IMAGES": {
+      "tamper": "Hey, bring those <img> tags back here! There were {{{count}}} of them!",
+      "matches": "Page serves all icons using data uris",
+      "hodor": "Hodor isn't converted into a data uri.",
+      "expectation": "{{{src}}} is inlined with the expected data uri."
     }
   }
 }

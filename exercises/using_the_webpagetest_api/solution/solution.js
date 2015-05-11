@@ -20,7 +20,7 @@ var WebPageTest = require('webpagetest');
 var wpt = new WebPageTest('www.webpagetest.org', WPT_API_KEY);
 var localtunnel = require('localtunnel');
 var app = express();
-var port = process.argv[2] || 7777;
+var port = process.env.PORT || 7777;
 
 app.set('json spaces', 2);
 app.get('/', home);

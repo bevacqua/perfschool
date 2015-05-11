@@ -11,6 +11,6 @@ After `uncss` I got rid of the extra `<link>` tags pointing to Bootstrap's CDN, 
 I had to remove a few extra rules to satisfy the whims of `perfschool verify`.
 
 The `reduced.css` file is `1.3kB` gzipped, versus the `22kB` in the source files.
-If we translate that difference into percentages, that's `5.9%` of the original
-size. If you also take into account that most projects have way larger code bases,
-the potential savings become much larger than that.
+If we translate that difference into percentages, that's a `94.1%` reduction overall.
+If you also take into account that most projects have way larger code bases, the
+potential savings more than justify using `uncss` in your projects.

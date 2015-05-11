@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var express = require('express');
 var app = express();
-var port = process.argv[2] || 7777;
+var port = process.env.PORT || 7777;
 
 app.get('/', home);
 app.get('/test', test);

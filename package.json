@@ -36,6 +36,6 @@
     "serve-static": "1.9.2",
     "webpagetest": "0.3.3",
     "workshopper": "2.5.0",
-    "workshopper-wat": "1.0.2"
+    "workshopper-wat": "2.0.0"
   }
 }

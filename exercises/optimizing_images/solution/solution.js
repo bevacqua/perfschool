@@ -20,7 +20,7 @@ var util = require('util');
 var request = require('request');
 var express = require('express');
 var app = express();
-var port = process.argv[2] || 7777;
+var port = process.env.PORT || 7777;
 
 app.get('/cats', cats);
 app.get('/lynx', lynx);
