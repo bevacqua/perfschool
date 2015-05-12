@@ -6,6 +6,7 @@ var tmp = require('tmp');
 var sinon = require('sinon');
 var proxyquire = require('proxyquire');
 var unpack = require('browser-unpack');
+var rowboat = require('rowboat');
 var chalk = require('chalk');
 var url = require('url');
 var jsdom = require('jsdom');
@@ -80,12 +81,11 @@ function verify (t, req, res) {
       if (err) {
         t.error(err); return;
       }
-      global.document = window.document;
       var ffol = sinon.spy();
       var rows = unpack(body);
-      var main = crazy(rows, {
-        fontfaceonload: ffol
-      });
+
+      global.document = window.document;
+      rowboat(rows, { fontfaceonload: ffol });
       delete global.document;
 
       ffolc('Lato');
@@ -102,30 +102,6 @@ function verify (t, req, res) {
         function matches (call) {
           return call.args[0] === face && call.args[1] && typeof call.args[1].success === 'function';
         }
-      }
-    }
-
-    function crazy (rows, mocks) { // i don't even
-      var entry = _.find(rows, 'entry');
-      return deeper(entry, _.keys(mocks || {}).reduce(noct, {}));
-      function noct (acc, key) {
-        acc[key] = mocks[key];
-        acc[key]['@noCallThru'] = true;
-        return acc;
-      }
-      function dep (deps, key) {
-        if (key in deps) {
-          return deps;
-        }
-        var dep = _.find(rows, { id: entry.deps[key] });
-        deps[key] = deeper(dep, {});
-        deps[key]['@noCallThru'] = true;
-        return deps;
-      }
-      function deeper (row, deps) {
-        var name = tmp.tmpNameSync();
-        fs.writeFileSync(name, entry.source, 'utf8');
-        return proxyquire(name, _.keys(row.deps).reduce(dep, deps));
       }
     }
   }
