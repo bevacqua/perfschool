@@ -6,7 +6,7 @@ var tmp = require('tmp');
 var sinon = require('sinon');
 var proxyquire = require('proxyquire');
 var unpack = require('browser-unpack');
-var rowboat = require('rowboat');
+var repack = require('repack-rows');
 var chalk = require('chalk');
 var url = require('url');
 var jsdom = require('jsdom');
@@ -81,11 +81,12 @@ function verify (t, req, res) {
       if (err) {
         t.error(err); return;
       }
+      global.document = window.document;
+
       var ffol = sinon.spy();
       var rows = unpack(body);
+      var main = repack(rows, { fontfaceonload: ffol });
 
-      global.document = window.document;
-      rowboat(rows, { fontfaceonload: ffol });
       delete global.document;
 
       ffolc('Lato');
