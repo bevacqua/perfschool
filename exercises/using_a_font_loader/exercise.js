@@ -2,7 +2,6 @@
 
 var _ = require('lodash');
 var fs = require('fs');
-var tmp = require('tmp');
 var sinon = require('sinon');
 var proxyquire = require('proxyquire');
 var unpack = require('browser-unpack');

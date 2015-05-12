@@ -17,6 +17,7 @@
   "preferGlobal": true,
   "dependencies": {
     "browser-unpack": "1.0.1",
+    "cave": "2.0.0",
     "chalk": "1.0.0",
     "cheerio": "0.19.0",
     "concat-stream": "1.4.8",
@@ -30,6 +31,7 @@
     "localtunnel": "1.5.0",
     "lodash": "3.8.0",
     "mkdirp": "0.5.0",
+    "penthouse": "0.3.2",
     "picture-tube": "0.0.4",
     "pretty-bytes": "1.0.4",
     "proxyquire": "1.4.0",
@@ -39,7 +41,6 @@
     "serve-static": "1.9.2",
     "sinon": "1.14.1",
     "through2-concat": "1.0.1",
-    "tmp": "0.0.25",
     "webpagetest": "0.3.3",
     "workshopper": "2.5.0",
     "workshopper-wat": "2.0.0"
