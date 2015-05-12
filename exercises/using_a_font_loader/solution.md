@@ -35,7 +35,8 @@ Luckily we can change all that with `browserify-shim`.
 npm install fontfaceonload browserify browserify-shim --save
 ```
 
-This is what the `package.json` had to look like:
+This is what the `package.json` had to look like in order for us to be able to use the
+`fontfaceonload` package.
 
 ```json
 {
