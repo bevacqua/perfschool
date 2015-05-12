@@ -1,0 +1,15 @@
+{
+  "name": "perfschool",
+  "version": "1.0.0",
+  "description": "Find your way through the performance optimization maze in this NodeSchool workshopper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bevacqua/perfschool.git"
+  },
+  "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com> (http://bevacqua.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bevacqua/perfschool/issues"
+  },
+  "homepage": "https://github.com/bevacqua/perfschool"
+}

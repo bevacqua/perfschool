@@ -2,7 +2,7 @@
 
 > Find your way through the performance optimization maze in this NodeSchool workshopper
 
-This workshop is based on one of my talks, ["High Performance in the Critical Path"][3].
+This workshop is based on one of my talks, ["High Performance in the Critical Path"][3]. The `perfschool` workshopper was originally written for [CampJS V][4].
 
 # Screenshots
 
@@ -39,3 +39,4 @@ MIT
 [1]: https://github.com/bevacqua/dragula/blob/master/resources/screenshot.png
 [2]: https://github.com/bevacqua/dragula/blob/master/resources/cat.png
 [3]: https://speakerdeck.com/bevacqua/high-performance-in-the-critical-path
+[4]: http://v.campjs.com/

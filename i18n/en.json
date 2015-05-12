@@ -73,6 +73,13 @@
       "matches": "Page serves all icons using data uris",
       "hodor": "Hodor isn't converted into a data uri.",
       "expectation": "{{{src}}} is inlined with the expected data uri."
+    },
+    "USING A FONT LOADER": {
+      "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly...",
+      "face": "Font family \"{{{face}}}\"",
+      "foited": "Font hides behind a flag or is otherwise inactive on page load",
+      "ffol-count": "{{{lib}}} is called {{{count}}} times",
+      "ffol-correct": "Font is swapped after {{{lib}}} detects it loaded"
     }
   }
 }

@@ -22,6 +22,7 @@ function verify (t, req, res) {
     t.ffail('tamper', { count: max });
   }
 
+  t.groupend();
   t.fgroup('matches');
 
   Array.prototype.slice.call(images.map(toSource), 0, max).forEach(compare);

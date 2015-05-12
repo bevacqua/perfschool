@@ -1,0 +1,16 @@
+body {
+  background-color: #f00;
+  padding: 20px;
+}
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+.cardo {
+  font-family: 'Cardo', sans-serif;
+}
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+.merriweather {
+  font-family: 'Merriweather', sans-serif;
+}

@@ -27,6 +27,8 @@ function verify (t, req, res) {
     t.ffail('empty', { tag: 'link' });
   }
 
+  t.groupend();
+
   var scriptSources = [];
   var linkSources = [];
 
@@ -57,6 +59,7 @@ function verify (t, req, res) {
       t.fpass('body', el.parent().is('body'));
       t.fpass('bottom', el.nextAll().length === el.nextAll('script').length);
       t.fpass('async', nonblocking);
+      t.groupend();
     }
   }
 
@@ -66,6 +69,7 @@ function verify (t, req, res) {
     t.fgroup('link', { href: href });
     t.fpass('noscript', el.parent().is('noscript'));
     linkSources.push(href);
+    t.groupend();
   }
 
   function cheerioOrBail () {
@@ -78,7 +82,7 @@ function verify (t, req, res) {
 
   function domloaded (err, window) {
     if (err) {
-      t.error(err); return;
+      t.error(err.length ? err[0] : err); return;
     }
     var $ = window.$;
     linkSources.forEach(verifyLink);
@@ -95,6 +99,7 @@ function verify (t, req, res) {
       } else {
         t.fpass('deferred', links.attr('media') === 'all');
       }
+      t.groupend();
 
       function byLinkAndMedia () {
         var el = $(this);

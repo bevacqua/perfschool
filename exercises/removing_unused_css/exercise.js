@@ -29,6 +29,7 @@ function verify (t, req, res) {
     t.ffail('empty', { tag: 'link' });
   }
 
+  t.groupend();
   contra.map(Array.prototype.slice.call(styles.map(toHref)), fetch, fetched);
 
   function toHref (el) {
@@ -50,6 +51,7 @@ function verify (t, req, res) {
       t.fpass('type', res.headers['content-type'].indexOf('text/css') === 0);
       t.fpass('valid', ast.stylesheet.parsingErrors.length === 0);
 
+      t.groupend();
       next(err, ast);
     });
   }
@@ -71,6 +73,7 @@ function verify (t, req, res) {
       t.ffail('unused', { selectors: failed + '.' });
     }
 
+    t.groupend();
     t.end();
   }
 
