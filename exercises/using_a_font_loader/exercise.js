@@ -24,7 +24,15 @@ function verify (t, req, res) {
     return;
   }
 
-  var script = $('script[src]').attr('src');
+  t.fgroup('sanity');
+
+  var script = $('script[src]');
+  if (script.length === 0) {
+    t.ffail('empty', { tag: 'script' });
+  }
+  var scriptHref = script.attr('src');
+
+  t.groupend();
 
   console.log(exercise.__('boot_jsdom', { process: chalk.yellow('jsdom') }));
   jsdom.env({
@@ -55,7 +63,11 @@ function verify (t, req, res) {
     foit('Roboto', '.roboto');
     foit('Merriweather', '.merriweather');
 
-    request(url.resolve(req.url, script), gotScript);
+    if (scriptHref) {
+      request(url.resolve(req.url, scriptHref), gotScript);
+    } else {
+      t.end();
+    }
 
     function foit (face, selector) {
       var family = $(selector).css('font-family');

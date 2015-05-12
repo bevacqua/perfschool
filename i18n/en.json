@@ -13,7 +13,8 @@
       "content_type": "Returns a \"{{{type}}}\" response",
       "json_object": "Returns a JSON object",
       "image_size": "Returns a response with at most {{{expected}}} worth of images (response had {{{actual}}})",
-      "prop": "Response has a \"{{{key}}}\" property"
+      "prop": "Response has a \"{{{key}}}\" property",
+      "sanity": "Good manners please. gl hf ;;"
     }
   },
   "init": {
@@ -28,7 +29,6 @@
       "main_group": "/test yields valuable timing information"
     },
     "DEFER ALL THE THINGS": {
-      "sanity": "Good manners please. gl hf ;;",
       "script": "Script tag \"{{{src}}}\"",
       "link": "Link tag \"{{{href}}}\"",
       "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags! Did you forget a <noscript> fallback?",
@@ -49,7 +49,6 @@
       "pagespeed_score": "PageSpeed score is over {{{min}}} (was {{{score}}})"
     },
     "REMOVING UNUSED CSS": {
-      "sanity": "Good manners please. gl hf ;;",
       "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags!",
       "resource": "Link tag \"{{{href}}}\"",
       "fetched": "Fetched CSS stylesheet",
@@ -75,6 +74,7 @@
       "expectation": "{{{src}}} is inlined with the expected data uri."
     },
     "USING A FONT LOADER": {
+      "empty": "Hey, you're meant to implement some JavaScript in an external .js file for the fontfaceonload stuff!",
       "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly...",
       "face": "Font family \"{{{face}}}\"",
       "foited": "Font hides behind a flag or is otherwise inactive on page load",
