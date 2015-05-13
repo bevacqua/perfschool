@@ -36,7 +36,7 @@ cd perfschool-playground ; npm install ; perfschool
 
 MIT
 
-[1]: https://github.com/bevacqua/dragula/blob/master/resources/menu.png
-[2]: https://github.com/bevacqua/dragula/blob/master/resources/cat.png
+[1]: https://github.com/bevacqua/perfschool/blob/master/resources/menu.png
+[2]: https://github.com/bevacqua/perfschool/blob/master/resources/cat.png
 [3]: https://speakerdeck.com/bevacqua/high-performance-in-the-critical-path
 [4]: http://v.campjs.com/
