@@ -5,9 +5,7 @@ var psi = require('psi');
 var cheerio = require('cheerio');
 var localtunnel = require('localtunnel');
 var wat = require('workshopper-wat');
-var exercise = wat({
-  verify: verify
-});
+var exercise = wat({ verify: verify });
 
 module.exports = exercise;
 

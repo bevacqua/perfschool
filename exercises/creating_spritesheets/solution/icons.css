@@ -1,0 +1,61 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.ic-chrome:before {
+  background-image: url(icons.png);
+  background-position: 0px 0px;
+  width: 48px;
+  height: 48px;
+}
+.ic-clippy:before {
+  background-image: url(icons.png);
+  background-position: -48px 0px;
+  width: 48px;
+  height: 48px;
+}
+.ic-ff:before {
+  background-image: url(icons.png);
+  background-position: 0px -48px;
+  width: 48px;
+  height: 48px;
+}
+.ic-github:before {
+  background-image: url(icons.png);
+  background-position: -48px -48px;
+  width: 48px;
+  height: 48px;
+}
+.ic-ie:before {
+  background-image: url(icons.png);
+  background-position: -96px 0px;
+  width: 48px;
+  height: 48px;
+}
+.ic-mongodb:before {
+  background-image: url(icons.png);
+  background-position: -96px -48px;
+  width: 48px;
+  height: 48px;
+}
+.ic-rockmelt:before {
+  background-image: url(icons.png);
+  background-position: 0px -96px;
+  width: 48px;
+  height: 48px;
+}
+.ic-safari:before {
+  background-image: url(icons.png);
+  background-position: -48px -96px;
+  width: 48px;
+  height: 48px;
+}
+.ic-slack:before {
+  background-image: url(icons.png);
+  background-position: -96px -96px;
+  width: 48px;
+  height: 48px;
+}

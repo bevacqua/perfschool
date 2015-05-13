@@ -26,6 +26,7 @@
     "express": "4.12.3",
     "glob": "5.0.5",
     "gm": "1.17.0",
+    "image-diff-2": "1.0.0",
     "jquery": "2.1.4",
     "jsdom": "3.1.2",
     "localtunnel": "1.5.0",
@@ -42,7 +43,8 @@
     "sinon": "1.14.1",
     "through2-concat": "1.0.1",
     "webpagetest": "0.3.3",
+    "webshot": "0.16.0",
     "workshopper": "2.5.0",
-    "workshopper-wat": "2.0.0"
+    "workshopper-wat": "3.0.0"
   }
 }

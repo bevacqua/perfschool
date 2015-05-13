@@ -15,7 +15,9 @@
       "image_size": "Returns a response with at most {{{expected}}} worth of images (response had {{{actual}}})",
       "prop": "Response has a \"{{{key}}}\" property",
       "sanity": "Good manners please. gl hf ;;",
-      "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly..."
+      "boot_jsdom": "Firing up {{{process}}} to verify that style tags loaded correctly...",
+      "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web...",
+      "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}..."
     }
   },
   "init": {
@@ -43,8 +45,6 @@
     },
     "ENFORCING A PERFORMANCE BUDGET": {
       "main_group": "/ passes #perfbudget test with flying colors",
-      "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
-      "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web...",
       "catty": "Something in the response contains \"cats\" or \"kittens\"!",
       "pagespeed_score": "PageSpeed score is over {{{min}}} (was {{{score}}})"
     },
@@ -63,9 +63,7 @@
       "main_group": "/cats returns felines according to the spec",
       "cat_amount": "Response contains {{{amount}}} cats",
       "is_this_a_cat": "Does this look like a cat to you? Be honest!",
-      "get_feedback": "Asking PageSpeed Insights for feedback about {{{url}}}...",
-      "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images...",
-      "tunnel": "Tunneling http://localhost:{{{port}}} onto the open web..."
+      "get_cat_example": "Requesting {{{url}}} to verify you are honest about using cat images..."
     },
     "INLINING IMAGES": {
       "tamper": "Hey, bring those <img> tags back here! There were {{{count}}} of them!",
@@ -87,6 +85,11 @@
       "deferred": "Link tag is properly loaded and has media type 'all'",
       "noscript": "Stylesheet has a <noscript> fallback <link> just in case",
       "empty": "Hey, you're not supposed to just remove all the things! Bring back my <{{{tag}}}> tags! Did you forget a <noscript> fallback?"
+    },
+    "CREATING SPRITESHEETS": {
+      "overall": "Spritesheet creation",
+      "visualcomp": "A screenshot of your page is similar to the expected result",
+      "psi_score": "Your page makes 4 requests at most (made {{{amount}}}, counting the request for index.html)"
     }
   }
 }

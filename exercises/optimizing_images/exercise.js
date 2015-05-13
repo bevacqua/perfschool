@@ -14,10 +14,7 @@ var localtunnel = require('localtunnel');
 var wat = require('workshopper-wat');
 var amount = randomAmountOfCats();
 var endpoint = '/cats?amount=' + amount;
-var exercise = wat({
-  verify: verify,
-  endpoint: endpoint
-});
+var exercise = wat({ verify: verify, endpoint: endpoint });
 
 module.exports = exercise;
 
