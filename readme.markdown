@@ -32,6 +32,12 @@ Once that's out of the way, just run the command below and choose one of the exe
 cd perfschool-playground ; npm install ; perfschool
 ```
 
+# FAQ
+
+- Haven't you read this!? [PageSpeed Service deprecation][5]
+
+Yes, yes I have. That article talks about **PageSpeed Service**, a CloudFlare-like CDN service that's going to be shut down. The PageSpeed Insights product and related open-source products are still alive and well [(source)][6].
+
 # License
 
 MIT
@@ -40,3 +46,5 @@ MIT
 [2]: https://github.com/bevacqua/perfschool/blob/master/resources/cat.png
 [3]: https://speakerdeck.com/bevacqua/high-performance-in-the-critical-path
 [4]: http://v.campjs.com/#high-performance
+[5]: https://developers.google.com/speed/pagespeed/service/Deprecation
+[6]: https://news.ycombinator.com/item?id=9500195
