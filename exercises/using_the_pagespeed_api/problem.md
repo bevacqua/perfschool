@@ -9,7 +9,7 @@ landing page `/`, as well as its stats.
 
 The exercise involves a very small dose of mad science. PageSpeed isn't really able to access
 a website that's hosted locally in your computer. However, we can use the `localtunnel`
-module to create a secure tunnel between your computer and http://localtunnel.me!
+module to create a secure tunnel between your computer and [http://localtunnel.me](http://localtunnel.me)!
 
 You just give it a `port` number and it'll create the bridge for you. Once that's out of
 the way, you can point `psi` to your `tunnel` and wait for the stats to come back.
