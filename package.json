@@ -42,6 +42,7 @@
     "serve-static": "1.9.2",
     "sinon": "1.14.1",
     "through2-concat": "1.0.1",
+    "tmp": "0.0.26",
     "webpagetest": "0.3.3",
     "webshot": "0.16.0",
     "workshopper": "2.5.0",
