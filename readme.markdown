@@ -18,6 +18,8 @@ Get it from `npm`
 npm install perfschool -g
 ```
 
+**`perfschool` requires you to use Node.js `v0.10.x`.
+
 # Usage
 
 First off, the command below will give you fresh copies of the files you'll need to run the exercises.
