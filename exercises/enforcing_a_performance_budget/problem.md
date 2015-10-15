@@ -5,7 +5,7 @@ It will create a `perfschool-playground` directory with everything you need to g
 
 Performance budgets are a great way of ensuring a certain level of quality when it comes
 to the performance output of your application. An example of a #perfbudget would be to
-allocate at most 1MB for tne entire landing page to load, or demand that it results in a
+allocate at most 1MB for the entire landing page to load, or demand that it results in a
 [SpeedIndex](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)
 that's not greater than `1000`.
 
